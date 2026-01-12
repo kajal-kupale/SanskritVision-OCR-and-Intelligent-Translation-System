@@ -34,15 +34,12 @@ The Sanskrit OCR and Translation System is designed to assist students and resea
 
 ## ⚙️ Setup Instructions
 1. Clone the repository:
-   ```bash
   git clone <https://github.com/kajal-kupale/Sanskrit-OCR-Translation-System/>
-   cd SanskritOCR
 
 2. Install dependencies:
 pip install -r requirements.txt
 
-    Run the application :
-python app.py
+3. Run the application :  python app.py
 - Open in browser
   http://127.0.0.1:5000
 
