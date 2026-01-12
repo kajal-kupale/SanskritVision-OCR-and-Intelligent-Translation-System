@@ -2,8 +2,6 @@
 
 A web-based academic project that extracts Sanskrit text from images or user input and translates it into English and Marathi using OCR and language-processing techniques.
 
----
-
 ## 📌 Overview
 The Sanskrit OCR and Translation System is designed to assist students and researchers in digitizing and understanding Sanskrit text written in Devanagari script. The application supports image-based OCR as well as manual text input and provides translations through a structured backend workflow.
 
@@ -27,10 +25,6 @@ The Sanskrit OCR and Translation System is designed to assist students and resea
 - **OCR:** Image-to-text extraction module  
 - **Authentication:** Flask-Login  
 
---
-
-
----
 
 ## ⚙️ Setup Instructions
 1. Clone the repository:
