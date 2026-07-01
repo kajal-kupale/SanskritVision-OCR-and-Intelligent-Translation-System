@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-title">
+
+    <h1>System Analytics</h1>
+
+    <p>
+        View translation statistics, language usage and system analytics.
+    </p>
+
+</div>
+
+
+<div class="analysis-toolbar">
+
+
+    <button onclick="window.print()" class="secondary-btn">
+        🖨 Print
+    </button>
+
+    <a href="{{ url_for('download_analysis') }}" class="primary-btn">
+        📄 Download Report
+    </a>
+
+</div>
+
+
+<div class="analysis-grid">
+    <div class="card">
+        <h4>Input Type Distribution</h4>
+        <canvas id="sourceChart"></canvas>
+    </div>
+
+    <div class="card">
+        <h4>Language Usage Distribution</h4>
+        <canvas id="languageChart"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+/* ================= BAR CHART ================= */
+
+new Chart(document.getElementById("sourceChart"), {
+
+    type: "bar",
+
+    data: {
+        labels: ["Image Upload Rate", "Text Pasted Rate"],
+        datasets: [{
+            data: [{{ image_count }}, {{ text_count }}],
+
+            backgroundColor: "#3B82F6",
+            borderColor: "#2D1E2F",
+            borderWidth: 1
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false,
+
+        plugins: {
+
+            legend:{
+                display:false
+            }
+
+        },
+
+        scales:{
+
+            x:{
+
+                grid:{
+                    display:true,
+                    drawBorder:true,
+                    drawOnChartArea:true,
+                    drawTicks:true,
+                    color:"#8E8E8E",
+                    lineWidth:1
+                },
+
+                ticks:{
+                    color:"#223654",
+                    font:{
+                        size:13,
+                        weight:"bold"
+                    }
+                }
+
+            },
+
+            y:{
+
+                beginAtZero:true,
+
+                ticks:{
+                    stepSize:1,
+                    color:"#223654",
+                    font:{
+                        size:12,
+                        weight:"bold"
+                    }
+                },
+
+                grid:{
+                    display:true,
+                    drawBorder:true,
+                    drawOnChartArea:true,
+                    drawTicks:true,
+                    color:"#8E8E8E",
+                    lineWidth:1
+                }
+
+            }
+
+        }
+
+    }
+
+});
+
+
+/* ================= LANGUAGE USAGE ================= */
+
+new Chart(document.getElementById("languageChart"), {
+
+    type:"line",
+
+    data:{
+
+        labels:{{ lang_labels|tojson }},
+
+        datasets:[{
+
+            label:"Language Usage Rate",
+
+            data:{{ lang_counts|tojson }},
+
+            borderColor:"#2563EB",
+
+            backgroundColor:"#2563EB",
+
+            pointBackgroundColor:"#2563EB",
+
+            pointBorderColor:"#FFFFFF",
+
+            pointRadius:5,
+
+            pointBorderWidth:2,
+
+            borderWidth:3,
+
+            tension:0.35,
+
+            fill:false
+
+        }]
+
+    },
+
+    options:{
+
+        responsive:true,
+
+        maintainAspectRatio:false,
+
+        plugins:{
+
+            legend:{
+
+                labels:{
+
+                    color:"#223654",
+
+                    font:{
+                        size:13,
+                        weight:"bold"
+                    }
+
+                }
+
+            }
+
+        },
+
+        scales:{
+
+            x:{
+
+                grid:{
+                    display:true,
+                    drawBorder:true,
+                    drawTicks:true,
+                    drawOnChartArea:true,
+                    color:"#8E8E8E",
+                    lineWidth:1
+                },
+
+                ticks:{
+
+                    color:"#223654",
+
+                    font:{
+                        size:13,
+                        weight:"bold"
+                    }
+
+                }
+
+            },
+
+            y:{
+
+                beginAtZero:true,
+
+                ticks:{
+
+                    stepSize:1,
+
+                    color:"#223654",
+
+                    font:{
+                        size:12,
+                        weight:"bold"
+                    }
+
+                },
+
+                grid:{
+                    display:true,
+                    drawBorder:true,
+                    drawTicks:true,
+                    drawOnChartArea:true,
+                    color:"#8E8E8E",
+                    lineWidth:1
+                }
+
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+{% endblock %}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Register | SanskritVision</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body class="login-page">
+
+<div class="login-wrapper">
+
+    <!-- ================= LEFT PANEL ================= -->
+
+    <div class="left-side">
+
+        <div class="left-content">
+
+            <h1>✨ SanskritVision</h1>
+
+            
+
+            <p>
+
+                Build your SanskritVision account to perform OCR,
+                multilingual translation, AI-powered Sanskrit
+                understanding, analytics, and securely manage
+                your translation history.
+
+            </p>
+
+            <ul>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Optical Character Recognition
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Multi-language Translation
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    AI Sanskrit Analysis
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Translation History
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Reports & Analytics
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- ================= RIGHT PANEL ================= -->
+
+    <div class="right-side">
+
+        <div class="login-card">
+
+            <h2>Create Account</h2>
+
+            <p class="subtitle">
+
+                Register to access SanskritVision.
+
+            </p>
+
+            <!-- Flash Messages -->
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+                {% if messages %}
+
+                    {% for category, message in messages %}
+
+                        <div class="flash {{ category }}">
+
+                            {{ message }}
+
+                        </div>
+
+                    {% endfor %}
+
+                {% endif %}
+
+            {% endwith %}
+
+            <!-- Register Form -->
+
+            <form method="POST">
+
+                <div class="input-group">
+
+                    <label>Full Name</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Email Address</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Create a password"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <button
+                        type="submit"
+                        class="login-btn">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Create Account
+
+                </button>
+
+            </form>
+
+            <div class="bottom-text">
+
+                Already have an account?
+
+                <a href="{{ url_for('login') }}">
+
+                    Login
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Auto Hide Flash -->
+
+<script>
+
+setTimeout(function(){
+
+const flash=document.querySelector(".flash");
+
+if(flash){
+
+flash.style.transition="0.5s";
+
+flash.style.opacity="0";
+
+setTimeout(()=>flash.remove(),500);
+
+}
+
+},3000);
+
+</script>
+
+</body>
+
+</html>

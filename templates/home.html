@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ============================================
+     TRUE GLASSMORPHISM LANDING PAGE
+============================================ -->
+
+<div class="glass-bg">
+
+    <!-- GLASS CARD -->
+    <div class="real-glass-card">
+
+        <!-- TITLE -->
+        <h1>Sanskrit OCR & Translation System</h1>
+
+        <!-- SUBTITLE -->
+        <p class="glass-subtitle">
+            Academic Digital Preservation Platform for Classical Sanskrit Texts
+        </p>
+
+        <!-- FEATURES -->
+        <div class="glass-features">
+
+            <div class="glass-feature">
+                <span>📜</span>
+                <p>Image-based Sanskrit OCR</p>
+            </div>
+
+            <div class="glass-feature">
+                <span>🌐</span>
+                <p>Multi-language Translation</p>
+            </div>
+
+            <div class="glass-feature">
+                <span>🕘</span>
+                <p>History & Usage Analysis</p>
+            </div>
+
+            <div class="glass-feature">
+                <span>🔐</span>
+                <p>Secure Academic Workflow</p>
+            </div>
+
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="glass-actions">
+            <a href="{{ url_for('login') }}" class="glass-btn primary">User Login</a>
+            <a href="{{ url_for('register') }}" class="glass-btn secondary">New User Registration</a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

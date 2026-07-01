@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="home-header">
+
+    <h1>SanskritVision: OCR and Intelligent Translation System</h1>
+
+    <p>
+        AI-driven Sanskrit OCR with multilingual translation and intelligent insights.
+    </p>
+
+</div>
+
+
+
+
+
+<div class="feature-grid">
+
+    <!-- OCR -->
+
+    <a href="{{ url_for('ocr_page') }}" class="feature-card">
+
+        <div class="feature-icon">📷</div>
+
+        <h3>Optical Character Recognition </h3>
+
+        <p>Extract Sanskrit text from images.</p>
+
+    </a>
+
+
+
+    <!-- Paste -->
+
+    <a href="{{ url_for('paste_page') }}" class="feature-card">
+
+        <div class="feature-icon">📝</div>
+
+        <h3>Text Input</h3>
+
+        <p>Translate manually entered sanskrit text.</p>
+
+    </a>
+
+
+
+    <!-- Translation -->
+
+    <a href="{{ url_for('paste_page') }}" class="feature-card">
+
+        <div class="feature-icon">🌐</div>
+
+        <h3>Translation Engine</h3>
+
+        <p>Translate Sanskrit into multi-languages.</p>
+
+    </a>
+
+
+
+    <!-- AI -->
+
+    <a href="{{ url_for('analysis') }}" class="feature-card">
+
+        <div class="feature-icon">🤖</div>
+
+        <h3>AI Assistant</h3>
+
+        <p>Keywords, sentiment and AI insights.</p>
+
+    </a>
+
+
+
+    <!-- History -->
+
+    <a href="{{ url_for('history_page') }}" class="feature-card">
+
+        <div class="feature-icon">📜</div>
+
+        <h3>History</h3>
+
+        <p>Stores every translation record.</p>
+
+    </a>
+
+
+
+    <!-- PDF -->
+
+    <a href="{{ url_for('analysis') }}" class="feature-card">
+
+        <div class="feature-icon">📄</div>
+
+        <h3>Reports</h3>
+
+        <p>Download activity reports.</p>
+
+    </a>
+
+</div>
+
+
+
+
+{% endblock %}

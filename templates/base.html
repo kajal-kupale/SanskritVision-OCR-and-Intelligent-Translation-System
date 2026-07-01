@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sanskrit OCR & AI Translation System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+{% if current_user.is_authenticated %}
+
+<div class="sidebar">
+
+    <!-- Logo -->
+    <div class="sidebar-brand">
+        <h2>✨SanskritVision</h2>
+        <p>Digital Sanskrit Assistant</p>
+    </div>
+
+    <!-- Profile -->
+    <a href="{{ url_for('profile') }}" class="profile-link">
+
+        <div class="sidebar-user">
+
+            <div class="avatar">
+    👤
+</div>
+
+
+            <div class="user-info">
+                <h4>{{ current_user.username }}</h4>
+                <span class="active">
+                    <span class="dot"></span>
+                    Active
+                </span>
+            </div>
+
+        </div>
+
+    </a>
+
+    <!-- Menu -->
+    <div class="sidebar-menu">
+
+        <a href="{{ url_for('dashboard') }}"
+        class="{% if request.endpoint=='dashboard' %}active{% endif %}">
+            🏠 Home
+        </a>
+
+        <a href="{{ url_for('ocr_page') }}"
+        class="{% if request.endpoint=='ocr_page' %}active{% endif %}">
+            📷 OCR Upload
+        </a>
+
+        <a href="{{ url_for('paste_page') }}"
+        class="{% if request.endpoint=='paste_page' %}active{% endif %}">
+            📝 Text Input
+        </a>
+
+        <a href="{{ url_for('history_page') }}"
+        class="{% if request.endpoint=='history_page' %}active{% endif %}">
+            📜 History
+        </a>
+
+        <a href="{{ url_for('analysis') }}"
+        class="{% if request.endpoint=='analysis' %}active{% endif %}">
+            📊 Analytics
+        </a>
+
+    </div>
+
+    <!-- Logout -->
+    <div class="sidebar-footer">
+
+        <a href="{{ url_for('logout') }}">
+            🚪 Logout
+        </a>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+
+<!-- ================= CONTENT ================= -->
+
+<div class="content">
+
+    {% with messages=get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category,message in messages %}
+                <div class="flash {{category}}">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}
+
+    {% endblock %}
+
+</div>
+
+</body>
+
+</html>

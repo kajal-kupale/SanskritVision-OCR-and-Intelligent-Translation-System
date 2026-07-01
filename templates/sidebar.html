@@ -1,0 +1,41 @@
+<div class="sidebar">
+
+    <div class="sidebar-brand">
+        <h2>Sanskrit OCR</h2>
+        <p>Translation System</p>
+    </div>
+
+    <div class="sidebar-menu">
+        <a href="{{ url_for('dashboard') }}"
+           class="{% if request.endpoint == 'dashboard' %}active{% endif %}">
+            📊 Dashboard
+        </a>
+
+        <a href="{{ url_for('ocr_page') }}"
+           class="{% if request.endpoint == 'ocr_page' %}active{% endif %}">
+            🖼️ OCR Upload
+        </a>
+
+        <a href="{{ url_for('paste_page') }}"
+           class="{% if request.endpoint == 'paste_page' %}active{% endif %}">
+            📝 Paste Text
+        </a>
+
+        <a href="{{ url_for('history_page') }}"
+           class="{% if request.endpoint == 'history_page' %}active{% endif %}">
+            🕘 History
+        </a>
+
+        <a href="{{ url_for('analysis') }}"
+           class="{% if request.endpoint == 'analysis' %}active{% endif %}">
+            📈 Analysis
+        </a>
+    </div>
+
+    <div class="sidebar-footer">
+        <a href="{{ url_for('logout') }}">
+            🚪 Logout
+        </a>
+    </div>
+
+</div>

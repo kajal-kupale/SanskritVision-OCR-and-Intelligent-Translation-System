@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- ======================================================
+     PAGE HEADER
+======================================================= -->
+
+<div class="page-title">
+
+    <h1>Translation History</h1>
+
+    <p>
+        View all your Sanskrit OCR and Text Translation records.
+    </p>
+
+</div>
+
+
+
+<!-- ======================================================
+     TOP BAR
+======================================================= -->
+
+<div class="history-top">
+
+    <div class="history-count">
+
+        📚 <strong>Total Records :</strong> {{ total }}
+
+    </div>
+
+    <div class="history-search">
+
+        <input
+            type="text"
+            id="historySearch"
+            placeholder="🔍 Search history..."
+            onkeyup="searchHistory()">
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     HISTORY TABLE
+======================================================= -->
+
+<div class="table-card">
+
+<table class="history-table" id="historyTable">
+
+<thead>
+
+<tr>
+
+<th>No.</th>
+
+<th>Source</th>
+
+<th>Language</th>
+
+<th>Date & Time</th>
+
+<th>Sanskrit Text</th>
+
+<th>Translation</th>
+
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for item in history %}
+
+<tr>
+
+<td>
+
+{{ loop.index }}
+
+</td>
+
+
+<td>
+
+{% if item.source=="Image" %}
+
+📷 OCR
+
+{% else %}
+
+📝 Text
+
+{% endif %}
+
+</td>
+
+
+
+<td>
+
+{% set lang = item.target_lang|upper %}
+
+{% if lang == "EN" %}
+
+English
+
+{% elif lang == "HI" %}
+
+Hindi
+
+{% elif lang == "MR" %}
+
+Marathi
+
+{% elif lang == "KN" %}
+
+Kannada
+
+{% elif lang == "TE" %}
+
+Telugu
+
+{% else %}
+
+{{ item.target_lang }}
+
+{% endif %}
+
+</td>
+
+
+
+<td>
+
+{{ item.timestamp.strftime('%d-%m-%Y') }}
+
+<br>
+
+<small>
+
+{{ item.timestamp.strftime('%I:%M %p') }}
+
+</small>
+
+</td>
+
+
+
+<td>
+
+{{ item.input_text[:70] }}
+
+{% if item.input_text|length > 70 %}
+
+...
+
+{% endif %}
+
+</td>
+
+
+
+<td>
+
+{% if item.translated_text %}
+
+    {{ item.translated_text[:70] }}
+
+    {% if item.translated_text|length > 70 %}
+        ...
+    {% endif %}
+
+{% else %}
+
+    Translation not available
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<!-- ======================================================
+     SEARCH SCRIPT
+======================================================= -->
+
+<script>
+
+function searchHistory() {
+
+    let input = document.getElementById("historySearch");
+
+    let filter = input.value.toUpperCase();
+
+    let table = document.getElementById("historyTable");
+
+    let tr = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < tr.length; i++) {
+
+        let rowText = tr[i].textContent || tr[i].innerText;
+
+        if (rowText.toUpperCase().indexOf(filter) > -1) {
+
+            tr[i].style.display = "";
+
+        }
+
+        else {
+
+            tr[i].style.display = "none";
+
+        }
+
+    }
+
+}
+
+</script>
+
+{% endblock %}

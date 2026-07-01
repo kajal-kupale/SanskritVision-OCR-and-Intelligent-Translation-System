@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome to SanskritVision</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body class="login-page">
+
+<div class="login-wrapper">
+
+    <!-- ================= LEFT PANEL ================= -->
+
+    <div class="left-side">
+
+        <div class="left-content">
+
+            <h1>✨SanskritVision</h1>
+
+            <h2>Welcome...</h2>
+
+            <p>
+
+                Join SanskritVision to understand and translate
+                Sanskrit text, perform Optical Character Recognition,
+                explore multilingual translation, generate AI insights,
+                and manage your translation history effortlessly.
+
+            </p>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Optical Character Recognition
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Multi-language Translation
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    AI Assistance
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Translation History
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Analytics & Reports
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- ================= RIGHT PANEL ================= -->
+
+    <div class="right-side">
+
+        <div class="login-card">
+
+            <h2>Welcome Back!</h2>
+
+            <p class="subtitle">
+
+                Continue with SanskritVision...
+
+            </p>
+
+            <!-- Flash Messages -->
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+                {% if messages %}
+
+                    {% for category, message in messages %}
+
+                        <div class="flash {{ category }}">
+
+                            {{ message }}
+
+                        </div>
+
+                    {% endfor %}
+
+                {% endif %}
+
+            {% endwith %}
+
+            <!-- Login Form -->
+
+            <form method="POST">
+
+                <div class="input-group">
+
+                    <label>Email Address</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="forgot">
+
+                    <a href="{{ url_for('forgot_password') }}">
+
+                        Forgot Password?
+
+                    </a>
+
+                </div>
+
+                <button type="submit" class="login-btn">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <div class="bottom-text">
+
+                Don't have an account?
+
+                <a href="{{ url_for('register') }}">
+
+                    Register Here
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Auto Hide Flash Message -->
+
+<script>
+
+setTimeout(function(){
+
+    const flash=document.querySelector(".flash");
+
+    if(flash){
+
+        flash.style.transition="0.5s";
+
+        flash.style.opacity="0";
+
+        setTimeout(()=>flash.remove(),500);
+
+    }
+
+},3000);
+
+</script>
+
+</body>
+
+</html>

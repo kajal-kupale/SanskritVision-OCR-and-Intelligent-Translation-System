@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-title">
+
+    <h1>👤 My Profile</h1>
+
+    <p>
+        Manage your Sanskrit OCR profile information.
+    </p>
+
+</div>
+
+<div class="profile-card">
+
+    <!-- ================= USER INFO ================= -->
+
+    <div class="profile-header">
+
+        <div class="profile-avatar">
+
+            👤
+
+        </div>
+
+        <div class="profile-info">
+
+            <h2>{{ current_user.username }}</h2>
+
+            <p>{{ current_user.email }}</p>
+
+            <span class="status active">
+                ● Active
+            </span>
+
+            
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <!-- ================= STATISTICS ================= -->
+
+    <div class="profile-stats">
+
+        <div class="stat-box">
+
+
+            <h3>{{ total }}</h3>
+
+            <div class="stat-icon">📄</div>
+
+            <p>Total Translation</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            
+
+            <h3>{{ image_count }}</h3>
+
+            <div class="stat-icon">📷</div>
+
+            <p>OCR Upload</p>
+
+        </div>
+
+        <div class="stat-box">
+
+           
+
+            <h3>{{ text_count }}</h3>
+
+             <div class="stat-icon">📝</div>
+
+            <p>Text Input</p>
+
+        </div>
+
+    </div>
+
+    <!-- ================= QUICK ACTIONS ================= -->
+
+    <div class="profile-actions">
+
+        <a href="{{ url_for('analysis') }}" class="primary-btn">
+            📜 View your analytics
+        </a>
+
+        
+
+    </div>
+
+</div>
+
+{% endblock %}

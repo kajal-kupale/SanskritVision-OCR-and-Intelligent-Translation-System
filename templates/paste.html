@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- ================= PAGE TITLE ================= -->
+
+<div class="page-title">
+
+    <h1>Text Translation</h1>
+
+    <p>
+        Enter Sanskrit text and translate it into your preferred language.
+    </p>
+
+</div>
+
+
+<!-- ================= INPUT CARD ================= -->
+
+<div class="form-card">
+
+    <form method="POST">
+
+        <div class="form-group">
+
+            <label>Enter Sanskrit Text</label>
+
+            <textarea
+                name="sanskrit_text"
+                class="output-box"
+                rows="6"
+                placeholder="Enter sanskrit text here..."
+                required>{{ text }}</textarea>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Select Language</label>
+
+            <select name="target_lang">
+
+                <option value="EN">English</option>
+
+                <option value="HI">Hindi</option>
+
+                <option value="MR">Marathi</option>
+
+                <option value="KN">Kannada</option>
+
+                <option value="TE">Telugu</option>
+
+            </select>
+
+        </div>
+
+        <button type="submit" class="primary-btn">
+
+            Extract & Translate 
+
+        </button>
+
+    </form>
+
+</div>
+
+
+<!-- ================= WARNING ================= -->
+
+{% if warning %}
+
+<div class="status-warning">
+
+    {{ warning }}
+
+</div>
+
+{% endif %}
+
+
+<!-- ================= SUCCESS ================= -->
+
+{% if success %}
+
+<div class="status-success">
+
+    ✅Translation completed successfully.
+
+
+</div>
+
+{% endif %}
+
+
+<!-- ================= RESULT SECTION ================= -->
+
+{% if text or result or ai_explanation %}
+
+<div class="result-grid">
+
+    <!-- LEFT CARD -->
+
+    <div class="result-card">
+
+        <h2>📄Extracted Sanskrit Text</h2>
+
+        {% if text %}
+
+        <textarea class="output-box" readonly>{{ text }}</textarea>
+
+        {% else %}
+
+        <div class="empty-box">
+
+            No Sanskrit text available.
+
+        </div>
+
+        {% endif %}
+
+
+        <h2 style="margin-top:12px;">🌐 Translated Text</h2>
+
+        {% if result %}
+
+        <textarea class="output-box" readonly>{{ result }}</textarea>
+
+        {% else %}
+
+        <div class="empty-box">
+
+            No translation available.
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+
+
+    <!-- RIGHT CARD -->
+
+    <div class="result-card">
+
+        <h2>🤖 AI Sanskrit Analysis</h2>
+
+        {% if ai_explanation %}
+
+        <div class="ai-output">
+
+            {{ ai_explanation|safe }}
+
+        </div>
+
+        {% else %}
+
+        <div class="empty-box">
+
+            AI analysis will appear here.
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% else %}
+
+
+
+
+{% endif %}
+
+{% endblock %}
