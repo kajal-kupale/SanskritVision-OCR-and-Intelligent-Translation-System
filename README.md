@@ -38,19 +38,17 @@ Users can upload Sanskrit text images or directly paste Sanskrit text, translate
 ---
 
 # 👥 Target Users
-### 🎓 Students : Learn and understand Sanskrit literature.
-### 👨‍🏫 Faculty & Researchers: Preserve ancient Sanskrit documents.
-### 📚 Educational Institutions:AI-assisted language education.
-### 📖 Sanskrit Enthusiasts:Improve accessibility to Sanskrit knowledge.
+- Students : Learn and understand Sanskrit literature.
+- Faculty & Researchers: Preserve ancient Sanskrit documents.
+- Educational Institutions:AI-assisted language education.
+- Sanskrit Enthusiasts:Improve accessibility to Sanskrit knowledge.
 ---
 
 # ✨ Key Features
 
 ## 📷 OCR Image Translation
 
-- Upload Sanskrit text images
 - Automatic Optical Character Recognition
-- Accurate Sanskrit text extraction
 - Instant multilingual translation
 
 ---
@@ -74,73 +72,19 @@ Users can upload Sanskrit text images or directly paste Sanskrit text, translate
 ---
 
 ## 📚 Translation History
-
-- Stores previous translations
-- Search translation records
-- View OCR and Text translation history separately
 - User-wise translation management
 
 ---
 
 ## 📊 Analytics Dashboard
-
 - Translation statistics
-- Input source distribution
-- Language usage analysis
-- Downloadable PDF report
 
 ---
 
 ## 📈 Reports
-
-- PDF Analysis Report
-- Translation Statistics
 - User Activity Summary
 
 ---
-
-# 🛠 Technology Stack
-
-## 🎨 Frontend
-
-![HTML5](https://img.shields.io/badge/HTML5-Latest-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-Latest-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Jinja2](https://img.shields.io/badge/Jinja2-Template-B41717?style=for-the-badge&logo=jinja&logoColor=white)
-
----
-
-## ⚙ Backend
-
-![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-3.x-000000?style=for-the-badge&logo=flask&logoColor=white)
-![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-Latest-D71F00?style=for-the-badge)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-
----
-
-## 🤖 OCR & Artificial Intelligence
-
-![OpenCV](https://img.shields.io/badge/OpenCV-4.x-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
-![Tesseract OCR](https://img.shields.io/badge/Tesseract_OCR-Latest-4285F4?style=for-the-badge)
-![Google Gemini](https://img.shields.io/badge/Google_Gemini-AI-8E75FF?style=for-the-badge&logo=google&logoColor=white)
-![Deep Translator](https://img.shields.io/badge/Deep_Translator-Latest-34A853?style=for-the-badge)
-
----
-
-## 📊 Visualization & Reports
-
-![Chart.js](https://img.shields.io/badge/Chart.js-Latest-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
-![ReportLab](https://img.shields.io/badge/ReportLab-PDF-FF5722?style=for-the-badge)
-
----
-
-## 💻 Development Tools
-
-![Visual Studio Code](https://img.shields.io/badge/VS_Code-Latest-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
-![Git](https://img.shields.io/badge/Git-Latest-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-Latest-181717?style=for-the-badge&logo=github&logoColor=white)
-
 ---## 🛠️ Technology Stack
 
 ### 🎨 Frontend
@@ -196,7 +140,6 @@ Users can upload Sanskrit text images or directly paste Sanskrit text, translate
 
 ## 1️⃣ Clone Repository
 
-```bash
 git clone https://github.com/kajal-kupale/SanskritVision-OCR-and-Intelligent-Translation-System.git
 
 cd SanskritVision-OCR-and-Intelligent-Translation-System
@@ -205,24 +148,15 @@ cd SanskritVision-OCR-and-Intelligent-Translation-System
 ---
 
 ## 2️⃣ Create Virtual Environment
-
-```bash
 python -m venv venv
 ```
-
-Activate
-
-### Windows
-
-```bash
 venv\Scripts\activate
-```
+
 
 ---
 
 ## 3️⃣ Install Dependencies
 
-```bash
 pip install -r requirements.txt
 ```
 
