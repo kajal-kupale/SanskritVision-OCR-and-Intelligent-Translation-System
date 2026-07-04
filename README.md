@@ -40,39 +40,39 @@ Users can upload Sanskrit text images or directly paste Sanskrit text, translate
 - Sanskrit Enthusiasts: Improve accessibility to Sanskrit knowledge.
 ---
 
-# # ⚙️ Core Working
+## ⚙️ Core Working
 
-## 📷 OCR Text Extraction
+### 📷 OCR Text Extraction
 Extracts printed Sanskrit text from uploaded images using **Tesseract OCR** and image preprocessing techniques for accurate text recognition.
 
 ---
 
-## 🤖 AI Translation Engine
+### 🤖 AI Translation Engine
 Integrates the **Google Gemini API** to perform intelligent multilingual translation, transliteration, and contextual Sanskrit text understanding.
 
 ---
 
-## 🌐 Multilingual Processing
+### 🌐 Multilingual Processing
 Processes Sanskrit text from both image uploads and manual input, translating it into multiple target languages while preserving contextual meaning.
 
 ---
 
-## 💾 Database Management
+### 💾 Database Management
 Stores user profiles, translation history, OCR records, and analytics data securely using **MySQL** with **SQLAlchemy ORM**.
 
 ---
 
-## 📊 Analytics & Reporting
+### 📊 Analytics & Reporting
 Generates interactive dashboards with language usage statistics, translation activity, OCR insights, and downloadable PDF analysis reports.
 
 ---
 
-## 🔐 User Authentication
+### 🔐 User Authentication
 Provides secure registration, login, profile management, session handling, and user-specific translation history using Flask authentication.
 
 ---
 
-## 💻 Responsive Web Interface
+### 💻 Responsive Web Interface
 Built with **Flask, HTML, CSS, JavaScript, and Jinja2**, offering an intuitive interface for OCR, translation, analytics, and history management across devices.
 
 # 🖥️ System Modules and Generated Outputs
