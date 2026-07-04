@@ -1,13 +1,12 @@
 
 <div align="center">
 
-# ✨SanskritVision
+# ✨ SanskritVision
 ### AI-Powered Sanskrit OCR & Intelligent Translation System
 
 <p align="center">
-An AI-powered web application for extracting Sanskrit text from images, translating it into multiple languages, analyzing translation history, and generating intelligent reports.
+A full-stack AI-powered platform integrating Optical Character Recognition (OCR), multilingual translation, Generative AI, secure user management, analytics, and report generation for efficient Sanskrit document digitization and language processing.
 </p>
-
 
 </div>
 
@@ -40,40 +39,6 @@ Users can upload Sanskrit text images or directly paste Sanskrit text, translate
 - Sanskrit Enthusiasts: Improve accessibility to Sanskrit knowledge.
 ---
 
-## ⚙️ Core Working
-
-### 📷 OCR Text Extraction
-Extracts printed Sanskrit text from uploaded images using **Tesseract OCR** and image preprocessing techniques for accurate text recognition.
-
----
-
-### 🤖 AI Translation Engine
-Integrates the **Google Gemini API** to perform intelligent multilingual translation, transliteration, and contextual Sanskrit text understanding.
-
----
-
-### 🌐 Multilingual Processing
-Processes Sanskrit text from both image uploads and manual input, translating it into multiple target languages while preserving contextual meaning.
-
----
-
-### 💾 Database Management
-Stores user profiles, translation history, OCR records, and analytics data securely using **MySQL** with **SQLAlchemy ORM**.
-
----
-
-### 📊 Analytics & Reporting
-Generates interactive dashboards with language usage statistics, translation activity, OCR insights, and downloadable PDF analysis reports.
-
----
-
-### 🔐 User Authentication
-Provides secure registration, login, profile management, session handling, and user-specific translation history using Flask authentication.
-
----
-
-### 💻 Responsive Web Interface
-Built with **Flask, HTML, CSS, JavaScript, and Jinja2**, offering an intuitive interface for OCR, translation, analytics, and history management across devices.
 
 # 🖥️ System Modules and Generated Outputs
 
@@ -81,7 +46,7 @@ Built with **Flask, HTML, CSS, JavaScript, and Jinja2**, offering an intuitive i
 
 ![Login Page](screenshots/OCRlogin.png)
 
-**Description:** Secure user authentication interface with email and password validation for accessing the SanskritVision platform.
+**Description:** User authentication interface with email and password validation for accessing the SanskritVision platform.
 
 ---
 
@@ -222,4 +187,4 @@ python app.py
 http://127.0.0.1:5000
 ```
 ---
->>>>>>> 8bef97af8e35eba6b1e8b5c3ab74b7d509005720
+
