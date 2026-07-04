@@ -8,11 +8,6 @@
 An AI-powered web application for extracting Sanskrit text from images, translating it into multiple languages, analyzing translation history, and generating intelligent reports.
 </p>
 
-<img src="https://img.shields.io/badge/Version-1.0-blue?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Python-3.13-yellow?style=for-the-badge&logo=python"/>
-<img src="https://img.shields.io/badge/Flask-Web_Framework-black?style=for-the-badge&logo=flask"/>
-<img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge"/>
 
 </div>
 
@@ -39,55 +34,114 @@ Users can upload Sanskrit text images or directly paste Sanskrit text, translate
 ---
 
 # 👥 Target Users
-- Students : Learn and understand Sanskrit literature.
+- Students: Learn and understand Sanskrit literature.
 - Faculty & Researchers: Preserve ancient Sanskrit documents.
-- Educational Institutions:AI-assisted language education.
-- Sanskrit Enthusiasts:Improve accessibility to Sanskrit knowledge.
+- Educational Institutions: AI-assisted language education.
+- Sanskrit Enthusiasts: Improve accessibility to Sanskrit knowledge.
 ---
 
-# ✨ Key Features
+# # ⚙️ Core Working
+
+## 📷 OCR Text Extraction
+Extracts printed Sanskrit text from uploaded images using **Tesseract OCR** and image preprocessing techniques for accurate text recognition.
+
+---
+
+## 🤖 AI Translation Engine
+Integrates the **Google Gemini API** to perform intelligent multilingual translation, transliteration, and contextual Sanskrit text understanding.
+
+---
+
+## 🌐 Multilingual Processing
+Processes Sanskrit text from both image uploads and manual input, translating it into multiple target languages while preserving contextual meaning.
+
+---
+
+## 💾 Database Management
+Stores user profiles, translation history, OCR records, and analytics data securely using **MySQL** with **SQLAlchemy ORM**.
+
+---
+
+## 📊 Analytics & Reporting
+Generates interactive dashboards with language usage statistics, translation activity, OCR insights, and downloadable PDF analysis reports.
+
+---
+
+## 🔐 User Authentication
+Provides secure registration, login, profile management, session handling, and user-specific translation history using Flask authentication.
+
+---
+
+## 💻 Responsive Web Interface
+Built with **Flask, HTML, CSS, JavaScript, and Jinja2**, offering an intuitive interface for OCR, translation, analytics, and history management across devices.
+
+# 🖥️ System Modules and Generated Outputs
+
+## 🔐 Login Page
+
+![Login Page](screenshots/OCRlogin.png)
+
+**Description:** Secure user authentication interface with email and password validation for accessing the SanskritVision platform.
+
+---
+
+## 📝 Register Page
+
+![Register Page](screenshots/OCRregister.png)
+
+**Description:** User registration page for creating a new account with secure credential management and profile initialization.
+
+---
+
+## 🏠 Dashboard
+
+![Dashboard](screenshots/OCRhome.png)
+
+**Description:** Central dashboard providing quick navigation to OCR, translation, analytics, history, profile, and reporting modules.
+
+---
 
 ## 📷 OCR Image Translation
 
-- Automatic Optical Character Recognition
-- Instant multilingual translation
+![OCR Image Translation](screenshots/OCRimage.png)
+
+**Description:** Upload Sanskrit text images to extract text using Tesseract OCR and perform AI-powered multilingual translation.
 
 ---
 
-## 📝 Text Translation
+## 🌐 AI Translation
 
-- Paste Sanskrit text directly
-- Translate into multiple languages
-- Fast AI-assisted processing
+![AI Translation](screenshots/OCRtranslate.png)
 
----
-
-## 🌐 Supported Languages
-
-- 🇬🇧 English
-- 🇮🇳 Hindi
-- 🇮🇳 Marathi
-- 🇮🇳 Kannada
-- 🇮🇳 Telugu
+**Description:** Translate Sanskrit text entered manually into multiple languages using the Gemini API with intelligent language processing.
 
 ---
 
-## 📚 Translation History
-- User-wise translation management
+## 📜 Translation History
+
+![Translation History](screenshots/OCRhistory.png)
+
+**Description:** View and search previously translated records with source type, language, timestamp, and translation details.
 
 ---
 
 ## 📊 Analytics Dashboard
-- Translation statistics
-  ![Analytics Dashboard Page](screenshots/OCRanalysis.png)
+
+![Analytics Dashboard](screenshots/OCRAnalysis.png)
+
+**Description:** Interactive dashboard displaying OCR usage, language distribution, translation statistics, and downloadable analytical reports.
 
 ---
 
-## 📈 Reports
-- User Activity Summary
+## 👤 User Profile
+
+![User Profile](screenshots/OCRprofile.png)
+
+**Description:** Personalized user profile displaying account information and quick access to translation activities and system features.
 
 ---
----## 🛠️ Technology Stack
+
+## 🛠️ Technology Stack
 
 ### 🎨 Frontend
 
@@ -138,73 +192,34 @@ Users can upload Sanskrit text images or directly paste Sanskrit text, translate
 
 ---
 
-# ⚙️ Installation Guide
-
-## 1️⃣ Clone Repository
-
-git clone https://github.com/kajal-kupale/SanskritVision-OCR-and-Intelligent-Translation-System.git
-
-cd SanskritVision-OCR-and-Intelligent-Translation-System
-```
-
----
-
-## 2️⃣ Create Virtual Environment
-python -m venv venv
-```
-venv\Scripts\activate
-
-
----
-
-## 3️⃣ Install Dependencies
-
-pip install -r requirements.txt
-```
-
----
-
-## 4️⃣ Configure Database
-
-Create a MySQL database.
-
-Example:
-
-```sql
-CREATE DATABASE sanskritvision;
-```
-
-Update your database credentials inside **app.py**.
-
----
-
-## 5️⃣ Configure Gemini API
-
-Create a `.env` file or update your API key in the configuration.
-
-```text
-GOOGLE_API_KEY=YOUR_API_KEY
-```
-
----
-
-## 6️⃣ Install Tesseract OCR
-
-Download and install Tesseract OCR.
-
----
-
-## 7️⃣ Run the Project
+# ⚙️ Quick Setup
 
 ```bash
+# Clone Repository
+git clone https://github.com/kajal-kupale/SanskritVision-OCR-and-Intelligent-Translation-System.git
+
+# Open Project Directory
+cd SanskritVision-OCR-and-Intelligent-Translation-System
+
+# Create Virtual Environment
+python -m venv venv
+
+# Activate Virtual Environment (Windows)
+venv\Scripts\activate
+
+# Install Dependencies
+pip install -r requirements.txt
+
+# Configure MySQL Database and Gemini API Key
+
+# Run Application
 python app.py
 ```
 
-Open your browser
+🌐 Open your browser and visit:
 
 ```
 http://127.0.0.1:5000
 ```
-
 ---
 >>>>>>> 8bef97af8e35eba6b1e8b5c3ab74b7d509005720
