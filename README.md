@@ -1,8 +1,7 @@
 
 <div align="center">
 
-# ✨ SanskritVision
-### AI-Powered Sanskrit OCR & Intelligent Translation System
+# ✨ SanskritVision: Sanskrit OCR & Intelligent Translation System
 
 <p align="center">
 A full-stack AI-powered platform integrating Optical Character Recognition (OCR), multilingual translation, Generative AI, secure user management, analytics, and report generation for efficient Sanskrit document digitization and language processing.
