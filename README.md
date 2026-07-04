@@ -79,6 +79,7 @@ Users can upload Sanskrit text images or directly paste Sanskrit text, translate
 
 ## 📊 Analytics Dashboard
 - Translation statistics
+  ![Analytics Dashboard Page](screenshots/OCRanalysis.png)
 
 ---
 
